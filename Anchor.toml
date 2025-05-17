@@ -1,0 +1,45 @@
+[toolchain]
+anchor_version = "0.31.1"
+
+[features]
+seeds = false
+skip-lint = true
+
+[programs.localnet]
+omniliquid_registry = "3pjibswEuCbXPtdemyuvDxbTMaGYxsJBG73uZpZajeRK"
+omniliquid_clob = "573mPaFytnEp1y9oKtHd1aNfwcxRc4ExYY1LthCVR4sX"
+omniliquid_price_router = "HgecS9wmQf2UutfytswApHsBzddBjFYsAX9VKgcYZAVu"
+omniliquid_trading_storage = "8jfjemcxtyZEAYzPWynEjWZPW3wD7e3suw7j2mvajY7A"
+omniliquid_omni_token = "CiTbKMyLecpE5LWcB1TkKFPtpnKD4AK1TAedmt4PjTgB"
+omniliquid_olp_vault = "6zLE2d1m87joeG1te75Qu19y2Y7irdHkPzToWpxkRjnL"
+
+[programs.devnet]
+omniliquid_registry = "3pjibswEuCbXPtdemyuvDxbTMaGYxsJBG73uZpZajeRK"
+omniliquid_clob = "573mPaFytnEp1y9oKtHd1aNfwcxRc4ExYY1LthCVR4sX"
+omniliquid_price_router = "HgecS9wmQf2UutfytswApHsBzddBjFYsAX9VKgcYZAVu"
+omniliquid_trading_storage = "8jfjemcxtyZEAYzPWynEjWZPW3wD7e3suw7j2mvajY7A"
+omniliquid_omni_token = "CiTbKMyLecpE5LWcB1TkKFPtpnKD4AK1TAedmt4PjTgB"
+omniliquid_olp_vault = "6zLE2d1m87joeG1te75Qu19y2Y7irdHkPzToWpxkRjnL"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "devnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "yarn run ts-mocha -p ./tsconfig.json -t 1000000 tests/**/*.ts"
+deploy-local = "anchor deploy --provider.cluster localnet"
+deploy-devnet = "anchor deploy --provider.cluster devnet"
+build = "anchor build"
+
+[workspace]
+members = [
+  "programs/omniliquid-registry",
+  "programs/omniliquid-clob",
+  "programs/omniliquid-price-router",
+  "programs/omniliquid-trading-storage",
+  "programs/omniliquid-omni-token",
+  "programs/omniliquid-olp-vault"
+]

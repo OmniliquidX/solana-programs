@@ -1,0 +1,25 @@
+[package]
+name = "omniliquid-olp-vault"
+version = "0.1.0"
+description = "OLP vault program for Omniliquid"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "omniliquid_olp_vault"
+
+[features]
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = "0.31.1"
+solana-program = "2.1.22"
+pyth-sdk-solana = "0.10.4"
+omniliquid-registry = { path = "../omniliquid-registry", features = ["cpi"] }
+omniliquid-clob = { path = "../omniliquid-clob", features = ["cpi"] }

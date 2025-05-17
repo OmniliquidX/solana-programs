@@ -1,0 +1,22 @@
+[package]
+name = "omniliquid-registry"
+version = "0.1.0"
+description = "Registry program for Omniliquid"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "omniliquid_registry"
+
+[features]
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+
+[dependencies]
+anchor-lang = "0.31.1"
+anchor-spl = "0.31.1"
+solana-program = "2.1.22"
